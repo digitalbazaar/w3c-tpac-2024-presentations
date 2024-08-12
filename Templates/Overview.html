@@ -70,8 +70,8 @@
 
 
   <section class="slide cover clear">
-   <h1>What's Next for Verifiable Credentials</h1>
-   <address>Wesley Smith</address>
+   <h1>%%Title%%</h1>
+   <address>%%Author%%</address>
    <p>TPAC 2024<br>
      Anaheim CA, USA<br>
      hybrid meeting<br>
@@ -82,113 +82,515 @@
    <p>Notes for slide 1 can be put here.</p>
   </section>
 
+
   <section class="slide" id="lists">
-    <h2>What should go into a new charter? (1/3)</h2>
-    <h3>Features</h3>
-    <ol>
-     <li>RenderMethod</li>
-     <li>ConfidenceMethod</li>
-     <li>Unlinkable ECDSA Cryptosuite</li>
-    </ol>
+   <h2>Lists</h2>
+   <h3>This is an H3</h3>
+   <ol>
+    <li>Potatoes</li>
+    <li>Onions and olives</li>
+   </ol>
+   <h3>Another H3</h3>
+   <ul>
+    <li>North pole</li>
+    <li>East pole</li>
+   </ul>
   </section>
 
   <section class=comment>
-  <p>Notes for slide 2 can be put here.</p>
+   <p>Notes for slide 2 can be put here.</p>
   </section>
 
-  <section class="slide" id="lists">
-    <h2>What should go into a new charter? (2/3)</h2>
-    <h3>Protocols</h3>
-    <ol>
-     <li>Verifiable Credentials API</li>
-     <li>Verifiable Credentials over Bluetooth</li>
-     <li>Verifiable Credentials over NFC</li>
-    </ol>
-  </section>
 
-  <section class=comment>
-  <p>Notes for slide 2 can be put here.</p>
-  </section>
-
-  <section class="slide" id="lists">
-    <h2>What should go into a new charter? (3/3)</h2>
-    <h3>Applications</h3>
-    <ol>
-     <li>Verifiable Credential Barcodes</li>
-     <li>
-      Vocabulary Work
-      <ol>
-        <li>Verifiable Driver's Licenses</li>
-        <li>Citizenship Vocabulary (Employment Authorization Documents etc.)</li>
-        <li>Verifiable Vehicle Titles</li>
-      </ol>
-
-     </li>
-    </ol>
+  <section class="slide slide-in">
+   <h2>Lists with icons</h2>
+   <ul class=with-icons>
+    <li><span>♪</span> North pole</li>
+    <li><span>🍉</span> East pole</li>
+    <li><img src="../Templates/piechart.png" alt="pie chart"> Metro pole</li>
+    <li><img src="../Templates/w3c-white-blue-circle.svg" alt="W3C"> Straw pole</li>
+    <li><span>🐥</span> Pole tree</li>
+   </ul>
   </section>
 
   <section class=comment>
-  <p>Notes for slide 2 can be put here.</p>
+   <p>Notes.</p>
   </section>
 
   <section class="slide">
-    <p class="shout">Features</p>
-   </section>
- 
-  <section class="slide">
-    <h2>renderMethod</h2>
+   <h2>Some elements</h2>
+   <p>Words can be given a <strong>strong emphasis</strong>, which
+   makes them appear in bold</p>
+   <p>The <em>normal emphasis</em> has a highlighter effect.</p>
+   <p>Code looks like this: <code>if (a) return b;</code></p>
+   <p>This link goes to <a href="#lists">slide 2</a></p>
+   <p class="note">This is an example of a note, in a smaller font</p>
   </section>
 
-  <section class="slide">
-    <h2>confidenceMethod</h2>
+  <section class=comment>
+   <p>Notes.</p>
   </section>
 
-  <section class="slide">
-    <h2>Unlinkable ECDSA Cryptosuite</h2>
-  </section>
 
   <section class="slide">
-    <p class="shout">Protocols</p>
-   </section>
- 
-  <section class="slide">
-    <h2>Verifiable Credentials API</h2>
+   <h2>Incremental display (1/3)</h2>
+   <div class=columns>
+    <div>
+     <p>Unfold (default style)</p>
+     <ul>
+      <li>This item is shown right away</li>
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+    <div>
+     <p>Fade in (<code>class=emerge</code>)</p>
+     <ul class=emerge>
+      <li>This item is shown right away</li>
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+   </div>
   </section>
 
-  <section class="slide">
-    <h2>Verifiable Credentials over Bluetooth</h2>
+  <section class=comment>
+   <p>Notes.</p>
   </section>
 
-  <section class="slide">
-    <h2>Verifiable Credentials over NFC</h2>
+
+  <section class="slide cut-in">
+   <h2>Incremental display (2/3)</h2>
+   <div class=columns>
+    <div>
+     <p>Quick<br> (<code>class=quick</code>)</p>
+     <ul class=quick>
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+    <div>
+     <p>Fade in + red items<br> (<code>class="emerge strong"</code>)</p>
+     <ul class="emerge strong">
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+   </div>
   </section>
 
-   <section class=comment>
-    <p>Notes.</p>
-   </section>
-
-   <section class="slide">
-    <p class="shout">Applications</p>
-   </section>
- 
-  <section class="slide">
-    <h2>Verifiable Credential Barcodes</h2>
+  <section class=comment>
+   <p>Notes.</p>
   </section>
 
-  <section class="slide">
-    <h2>Citizenship Vocabulary</h2>
-  </section>
 
   <section class="slide">
-    <h2>Verifiable Driver's License Vocabulary</h2>
+   <h2>Incremental display (3/3)</h2>
+   <div class=columns>
+    <div>
+     <p>Quick + greeked<br> (<code>class="quick greeked"</code>)</p>
+     <ul class="quick greeked">
+      <li class="next">The first item</li>
+      <li class="next">Another item</li>
+      <li class="next">The third item</li>
+     </ul>
+    </div>
+    <div>
+     <p>Fade in + red + dim (<code>class= "emerge strong dim"</code>)</p>
+     <ul class="emerge strong dim">
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+   </div>
   </section>
 
-  <section class="slide">
-    <h2>Verifiable Vehicle Titles Vocabulary</h2>
+  <section class=comment>
+   <p>Notes.</p>
   </section>
+
+
+  <section class="slide">
+   <h2>Elements updated in-place</h2>
+   <p>Combining class=incremental with class=in-place
+     yields elements that are displayed one by one, with each one
+     replacing the previous. Example:
+   <ol class="incremental in-place">
+     <li>First element
+     <li>The second replaces the first<br>
+       until it itself is replaced
+     <li>The third replaces the second.
+   </ol>
+   <p class=note>(class=overlay is an alias for class=incremental.)
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side">
+   <h2>An image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square leaves]">
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side r">
+   <h2>An image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square
+	     leaves]">
+   <p>And again, with class <code>slide side right</code>.</p>
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side clear">
+   <h2>A ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>Adding class <code>cover</code> to the image makes it stretch to
+   the edges of the slide.</p>
+   <p class=note>Hint: Add class=clear on the slide to omit the banner
+   and slide number.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side right">
+   <h2>A ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>And also on the right side…</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side big">
+   <h2>A big image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square leaves]">
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side right big">
+   <h2>A big image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square leaves]">
+   <p>And again, with class ‘slide side right big’.</p>
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up…</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side big clear">
+   <h2>A big, ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side right big">
+   <h2>A big, ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>And on the right side…</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide" id="figures">
+   <h2>A figure</h2>
+   <details>
+    <summary>
+     <img src="../Templates/piechart.png" alt="pie chart" height=405>
+    </summary>
+    <p>The description of the pie chart, here as a table:
+    <table class=striped>
+     <thead>
+      <tr><th>Name <th>Percentage
+     <tbody>
+      <tr><td>Andy <td>16%
+      <tr><td>Chloe <td>21%
+      <tr><td>Daniel <td>13%
+      <tr><td>Grace <td>20%
+      <tr><td>Sophia <td>30%
+    </table>
+   </details>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide" id="columns">
+   <h2>In columns</h2>
+   <div class="columns">
+    <section>
+     <h3>Title</h3>
+     <p>Children of an element with a class of <code>columns</code> are
+      distributed over two columns</p>
+    </section>
+    <section>
+     <h3>Title</h3>
+     <p>This is the second child, which goes into the right
+      column</p>
+    </section>
+    <section>
+     <h3>Title</h3>
+     <p>And this is the third one. Left column again.</p>
+    </section>
+    <p>Etc.</p>
+   </div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide" id="place">
+   <div class="place t l"><strong>place t l</strong></div>
+   <div class="place t"><strong>place t</strong></div>
+   <div class="place t r"><strong>place t r</strong></div>
+   <div class="place l">Here is something for the left
+   side, with class <strong>place l</strong></div>
+   <div class="place">class <strong>place</strong> puts an element
+   centered in a 3×3 grid</div>
+   <div class="place r"><strong>place r</strong></div>
+   <div class="place b l"><strong>place b l</strong></div>
+   <div class="place b"><strong>place b</strong></div>
+   <div class="place b r">combine <strong>place</strong> with
+   <strong>top</strong> (or <strong>t</strong>),
+   <strong>right</strong> (or <strong>r</strong>),
+   <strong>bottom</strong> (or <strong>b</strong>) and
+   <strong>left</strong> (or <strong>l</strong>)</div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Numbered lines of code</h2>
+   <pre class="numbered">
+Lines in a PRE can be numbered
+                       (automatically)
+  * Give the PRE a class of "numbered"
+  * Works for up to 20 lines
+                       (depending on font size)
+  six
+   seven
+   eight
+    nine
+    ten
+  eleven</pre>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+    <h2>Striped tables</h2>
+    <table class="striped">
+      <tr><td>row 1</td><td>has no background</td></tr>
+      <tr><td>row 2</td><td>has a gray background</td></tr>
+      <tr><td>row 3</td><td>has no background</td></tr>
+      <tr><td>row 4</td><td>has a gray background</td></tr>
+      <tr><td>etc.</td><td></td></tr>
+      <tr><td>etc.</td><td></td></tr>
+    </table>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide lightmode">
+   <h2>Image overlay: cover</h2>
+   <!-- Photo by AleRimoldi, source: https://commons.wikimedia.org/wiki/File:Statue_de_Gutenberg_%C3%A0_Strasbourg.jpg -->
+   <img width=500 height=667
+	src="../Templates/gutenberg_f9f9f9.jpg"
+	alt="Image: Statue of Gutenberg"
+	class="cover">
+   <p class="place bottom right">Careful, some images make the text hard to
+   read!</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide lightmode">
+   <h2>Image overlay: fit</h2>
+   <!-- Photo by AleRimoldi, source: https://commons.wikimedia.org/wiki/File:Statue_de_Gutenberg_%C3%A0_Strasbourg.jpg -->
+   <img width=500 height=667
+	src="../Templates/gutenberg_f9f9f9.jpg"
+	alt="Image: Statue of Gutenberg"
+	class="fit">
+   <p class="place l">Careful, some images make the text
+   hard to read!</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide darkmode">
+    <h2>White text</h2>
+    <img width=505 height=353
+	 src="https://www.w3.org/2020/Talks/ac-slides/template/coast.jpg"
+	 class="cover" style="object-position: 94% 100%"
+	 alt="[photo with a beach, cliffs, buildings, dark clouds and a surfer]" >
+    <ul>
+      <li>Use a class of <code>slide darkmode</code> for
+      white-on-black</li>
+      <li>Useful for text on a dark background</li>
+    </ul>
+    <p class="note">(Photo <a
+    href="https://unsplash.com/photos/XBbX5PYOvC0/info" >‘Surfer and
+    the stormy sea’</a> by <a href="https://unsplash.com/@xavifuji"
+    >Xavier Nohet</a>)</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Shout and grow!</h2>
+   <p>Shout:</p>
+   <p class="shout">Takahashi method!</p>
+   <p>Shout &amp; Grow:</p>
+   <p class="shout grow">Animated</p>
+   <p class="grow">Grow: Don't use this too often!</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Slide transitions</h2>
+   <p>The style sheet predefines several transitions: fade-in, slide-in,
+   move-left, etc.</p>
+   <p>A transition can be set globally, applying to all slides; or
+   locally, applying only to the transition between this slide and the
+   next.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Convert to PDF</h2>
+
+   <div class="columns">
+    <div>
+     <p>Print in <em>portrait</em> mode to get:
+     <ul>
+      <li>multiple slides per page
+      <li>notes between the slides
+     </ul>
+     <div style="border: thin solid; padding: 0.6em 0.6em 0">
+      <p>📃︎ Try it! [W3C team only]</p>
+      <p><a href="Overview.html,pdf" title="slides + notes"
+       >A4</a>
+       or <a href="Overview.html,pdfl" title="slides + nodes"
+       >Letter</a></p>
+     </div>
+    </div>
+    <div>
+     <p>Print in <em>landscape</em> mode to get:</p>
+     <ul>
+      <li>one slide = one page
+      <li>no notes
+     </ul>
+     <div style="border: thin solid; padding: 0.6em 0.6em 0">
+      <p>📃︎  Try it! [W3C team only]</p>
+      <p><a href="Overview.html,pdf?size=A4+landscape" >PDF
+       slides</a></p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
 
   <section class="slide final">
-   <h2>Summary</h2>
+   <h2>Conclusion</h2>
+   <ol>
+    <li>Making slides is easy</li>
+    <li>Questions?</li>
+   </ol>
   </section>
 
   <section class=comment>
@@ -1125,17 +1527,17 @@
 
    <h2>Speaking guidelines</h2>
 
-   <p>The section >a
+   <p>The section <a
    href="https://www.w3.org/2024/09/TPAC/ac-agenda.html#speaking"
-   >‘Speaking guidelines’</p> of the AC agenda page contains
-   recommendations.
+   >‘Speaking guidelines’</a> of the AC agenda page contains
+   recommendations.</p>
   </section>
 
   <footer class="long comment">
    <address>Template created 11 December 2023 by <a
    href="mailto:bert@w3.org">Bert Bos</a>.
    This file last modified
-   $Date: 2024/04/09 15:58:20 $ by $Author: bbos $.</address>
+   $Date: 2024/07/31 23:21:04 $ by $Author: bbos $.</address>
   </footer>
  </body>
 </html>
