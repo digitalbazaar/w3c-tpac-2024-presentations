@@ -1,0 +1,725 @@
+/* from https://codepen.io/mikemai2awesome/pen/KKvMZVz */
+@layer config {
+  :root,
+  [data-theme="light"] {
+    --brand-off-black-1: #202020;
+    --brand-off-black-2: #090909;
+    --brand-off-white-1: #f4f4f4;
+    --brand-off-white-2: #f0f0f0;
+
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif; /* Use system UI font. */
+    --font-italic: "Georgia", serif; /* Remove this var completely if you don't care for pretty italics. */
+    --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+      Liberation Mono, monospace;
+    --font-size: 119%; /* % ensures browser zoom is supported. */
+    --font-weight-regular: 400;
+    --font-weight-semibold: 700;
+    --font-weight-bold: 900;
+    --tracking: 0; /* Reduce this to 0 if your font does not need adjustment. */
+    --leading: 1.45; /* Standard leading for good legibility. Adjust this based on the font you are using if you decides to not use system UI font. */
+
+    --gutter: clamp(1ch, 2.5vmax, 3ch);
+    --stack: clamp(1.25ex, 2.5vmax, 1.75ex);
+    --line-length: 70ch;
+    --min-inline-size: 20ch;
+    --page-padding-inline: calc((100dvi - min(var(--line-length), 80dvi)) / 2);
+
+    --border-width: 1px;
+    --border-style: solid;
+    --border-style-readonly: dashed;
+    --border-radius: 0.5em;
+
+    --ol-style-type: decimal;
+    --bullet-hanging-offset: 0;
+    --quote-hanging-position: absolute;
+    --quote-hanging-offset: -1ex;
+
+    --color-text: var(--brand-off-black-1);
+    --color-bg: var(--brand-off-white-1);
+    --color-accent: var(--brand-off-black-1);
+
+    @media (prefers-contrast: more) {
+      --color-text: black;
+      --color-bg: white;
+      --color-accent: black;
+    }
+  }
+
+  [data-theme="dark"] {
+    --font-weight-regular: 300; /* Knockout text appears bolder, reduce weight to make body text more legible. */
+    --color-text: var(--brand-off-white-2);
+    --color-bg: var(--brand-off-black-2);
+    --color-accent: var(--brand-off-black-2);
+    color-scheme: dark;
+
+    @media (prefers-contrast: more) {
+      --color-text: white;
+      --color-bg: black;
+      --color-accent: black;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    /* Repeating dark theme styles for dark mode */
+    :root {
+      --font-weight-regular: 300; /* Knockout text appears bolder, reduce weight to make body text more legible. */
+      --color-text: var(--brand-off-white-2);
+      --color-bg: var(--brand-off-black-2);
+      --color-accent: var(--brand-off-black-2);
+      color-scheme: dark;
+
+      @media (prefers-contrast: more) {
+        --color-text: white;
+        --color-bg: black;
+        --color-accent: black;
+      }
+    }
+  }
+}
+
+@layer color {
+  :root,
+  [data-theme] {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    accent-color: var(--color-accent);
+  }
+
+  ::selection {
+    color: var(--color-bg);
+    background: var(--color-text);
+  }
+
+  :where(a) {
+    color: var(--color-primary, var(--color-text));
+  }
+
+  :where(button) {
+    color: var(--color-bg);
+    background-color: var(--color-primary, var(--color-text));
+    border-color: transparent;
+  }
+
+  :where(input, textarea, select) {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+  }
+
+  :where(code) {
+    color: var(--color-bg);
+    background-color: var(--color-text);
+  }
+
+  :where(table) {
+    background-color: var(
+      --color-text
+    ); /* This is acting as border color because there is spacing between cells. */
+  }
+
+  :where(th, td) {
+    background-color: var(--color-bg);
+  }
+}
+
+@layer typography {
+  :root {
+    --_font-size: clamp(
+      var(--font-size),
+      var(--font-size) * 0.9 + 0.25dvi,
+      var(--font-size) * 2
+    );
+    font-size: var(--_font-size);
+    font: -apple-system-body; /* iOS reset to user OS preferences — thanks, Chris LaChance! */
+    font-family: var(--font);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading);
+    letter-spacing: var(--tracking);
+
+    @supports (font: -apple-system-body) and
+      (not (-webkit-touch-callout: default)) {
+      /* Make sure desktop Safari doesn't pick up broken iOS issues. */
+      font-size: var(--_font-size);
+    }
+  }
+
+  :where(button, select, input, textarea, a) {
+    font: inherit; /* Reset font. */
+  }
+
+  :where(a) {
+    text-decoration: underline;
+    text-decoration-thickness: var(--border-width);
+    text-underline-offset: calc(var(--border-width) * 2);
+  }
+
+  :where(a):hover {
+    text-decoration-thickness: calc(var(--border-width) * 3);
+  }
+
+  :where(pre, code, kbd, dl, figcaption, abbr, table) {
+    font-family: var(
+      --font-mono
+    ); /* Differentiate preformatted, code, description, and table text from body text. */
+  }
+
+  :where(pre, code, kbd, dl, small, figcaption, table) {
+    font-size: 0.8em; /* Make monospace and small text smaller than body text. */
+  }
+
+  :where(big) {
+    font-size: 1.2em; /* <big> is technically deprecated, but I love using it. This creates a fallback if a browser doesn't support it. */
+  }
+
+  :where(pre code) {
+    display: block; /* Define block code. */
+    font-size: 1em; /* Prevent cascading. */
+  }
+
+  :where(blockquote, em, i, cite) {
+    font-family: var(
+      --font-italic,
+      var(--font)
+    ); /* Differentiate blockquote, citation, idiomatic, and emphasisized text from body text. Also, sans-serif italic is ugly. */
+    font-weight: var(
+      --font-weight-regular
+    ); /* Prevent italics to be bold. Bold italic is also ugly and unnecessary. */
+  }
+
+  :where(blockquote) {
+    font-size: clamp(1.5rem, 1.25rem + 1dvi, 3rem);
+    letter-spacing: 0;
+  }
+
+  :where(blockquote p) {
+    text-wrap: pretty;
+  }
+
+  :where(blockquote q)::before {
+    position: var(--quote-hanging-position);
+    margin-inline-start: var(--quote-hanging-offset);
+  }
+
+  :where(blockquote q q)::before {
+    position: static;
+    margin-inline-start: unset;
+  }
+
+  :where(strong, b, kbd, th, button) {
+    font-weight: var(
+      --font-weight-semibold
+    ); /* Make non-heading emphasized text less bold than heading text. */
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    line-height: 1.2;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, summary strong, legend) {
+    font-weight: var(--font-weight-bold);
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  :where(abbr) {
+    text-decoration: underline;
+    text-decoration-style: dotted; /* Differentiate abbreviaions from links. */
+    text-underline-offset: calc(var(--border-width) * 2);
+  }
+
+  :where(button, label, select, summary) {
+    cursor: pointer;
+  }
+
+  :where(summary:hover > *) {
+    text-decoration: underline;
+    text-underline-offset: calc(var(--border-width) * 2);
+  }
+
+  :where(figcaption) {
+    text-align: center;
+  }
+
+  :where(th) {
+    text-align: start;
+  }
+
+  :where(th, td) {
+    vertical-align: baseline;
+  }
+
+  :where(ol) {
+    list-style-type: var(--ol-style-type);
+  }
+
+  :where(fieldset > ol) {
+    list-style: none;
+  }
+
+  /* Chinese Typesetting */
+  [lang^="zh-"] {
+    --font-italic: var(--font);
+    --font-size: 90%;
+    --font-weight-regular: 400;
+    --tracking: 0;
+    --leading: 1.6;
+    --gutter: clamp(0.75rem, 2.5vmax, 1rem);
+    --stack: clamp(0.75rem, 2.5vmax, 1rem);
+    --line-length: 36rem;
+    --min-inline-size: 10rem;
+    --page-padding-inline: calc((100dvi - min(var(--line-length), 90dvi)) / 2);
+    --ol-style-type: cjk-ideographic;
+    --bullet-hanging-offset: 2em;
+    --quote-hanging-position: revert;
+    --quote-hanging-offset: revert;
+  }
+}
+
+@layer spacing {
+  :where(h1, h2, h3, h4, h5, h6, p, figure, form, pre, blockquote, ul, ol, dl, li, details) {
+    margin-block-end: 0;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    margin-block-start: calc(var(--stack) * 1.75);
+  }
+
+  :where(p, figure, form, fieldset, pre, blockquote, ul, ol, dl, details, [is-stack]) {
+    margin-inline: 0;
+    margin-block-start: var(--stack);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, p, figure, form, fieldset, pre, blockquote, ul, ol, dl, details, [is-stack]):first-child,
+  :where(legend + *) {
+    margin-block-start: 0;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) + * {
+    margin-block-start: calc(var(--stack) / 1.5);
+  }
+
+  :where(ul, ol) {
+    padding-inline-start: var(--bullet-hanging-offset);
+  }
+
+  :where(li > ul, li > ol) {
+    margin-block-start: calc(var(--stack) / 5);
+  }
+
+  :where(details ul, details ol) {
+    margin-inline-start: 4ch; /* Unify indent for all lists inside details. */
+  }
+
+  :where(table ul, table ol) {
+    margin-inline-start: 2ch; /* Unify indent for all lists inside table. */
+  }
+
+  :where(li > ul, li > ol, fieldset ul, fieldset ol) {
+    margin-inline-start: 2.25ch; /* Unify indent for all nested lists. */
+  }
+
+  :where(li + li) {
+    margin-block-start: calc(var(--stack) / 5);
+  }
+
+  :where(fieldset > ol li + li) {
+    margin-block-start: calc(var(--stack) / 2);
+  }
+
+  :where(fieldset > ol) {
+    margin-inline: 0;
+  }
+
+  :where(hr) {
+    margin-block-start: calc(var(--stack) * 3);
+    margin-block-end: calc(var(--stack) * 3);
+  }
+
+  :where(hr + *) {
+    margin-block-start: 0;
+  }
+
+  :where(figure > img, table) {
+    margin-inline: auto;
+  }
+
+  :where(blockquote > *) {
+    margin-block-start: calc(var(--stack) / 4);
+  }
+
+  :where(blockquote:not(:last-child)) {
+    padding-block-end: calc(var(--stack) / 2);
+  }
+
+  :where(button, dd, th, td, code, kbd, select, input:not([type="radio"], [type="checkbox"]), textarea) {
+    /* Unify inset spacing on bordered elements. */
+    padding-block: calc(var(--stack) / 6);
+    padding-inline: calc(var(--gutter) / 3);
+  }
+
+  :where(button) {
+    padding-inline: var(--gutter); /* Give button more spacing. */
+  }
+
+  :where(kbd) {
+    padding-block: calc(var(--stack) / 6);
+    padding-inline: calc(var(--gutter) / 6);
+  }
+
+  :where(caption, figcaption) {
+    padding-block: calc(var(--stack) / 2);
+  }
+
+  :where(figure, pre, [is-box]) {
+    padding-block-start: calc(
+      var(--stack) / 2.5
+    ); /* Line up top of images/codeblocks with text in an adjacent column layout. */
+  }
+
+  :where(pre) {
+    padding-block-end: calc(var(--stack) / 2.5);
+  }
+
+  :where(pre code) {
+    padding-block: var(--stack);
+    padding-inline: var(--gutter);
+  }
+
+  details[open] summary + * {
+    margin-block-start: calc(var(--stack) / 4);
+  }
+}
+
+@layer elements {
+  body {
+    margin: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-feature-settings: "kern", "ss06";
+    font-kerning: normal;
+    -moz-osx-font-smoothing: grayscale !important;
+    -webkit-font-smoothing: antialiased !important;
+    box-sizing: border-box;
+  }
+
+  *:focus-visible {
+    outline: calc(var(--border-width) * 2) solid
+      var(--color-primary, var(--color-text));
+    outline-offset: calc(var(--border-width) * 2);
+  }
+
+  *:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+  *[readonly] {
+    border-style: var(--border-style-readonly);
+  }
+
+  :where(button),
+  :where(kbd) {
+    border: var(--border-width) solid;
+  }
+
+  :where(input, textarea, select, fieldset, dd) {
+    border: var(--border-width) var(--border-style); /* Unify border styles. */
+  }
+
+  @media (forced-colors: active) {
+    :where(th, td, code) {
+      border: var(--border-width) solid;
+    }
+  }
+
+  :where(input:not([type="checkbox"]):not([type="radio"]), textarea, select, fieldset, button, img, code, dd, table) {
+    border-radius: var(
+      --border-radius
+    ); /* Unify bordered elements border radius. */
+  }
+
+  :where(table > *:first-child tr:first-child > *:first-child, table
+      > caption
+      + *
+      tr:first-child
+      > *:first-child) {
+    border-start-start-radius: var(--border-radius);
+  }
+
+  :where(table > *:first-child tr:first-child > *:last-child, table
+      > caption
+      + *
+      tr:first-child
+      > *:last-child) {
+    border-start-end-radius: var(--border-radius);
+  }
+
+  :where(table > *:last-child tr:last-child > *:first-child) {
+    border-end-start-radius: var(--border-radius);
+  }
+
+  :where(table > *:last-child tr:last-child > *:last-child) {
+    border-end-end-radius: var(--border-radius);
+  }
+
+  :where(kbd) {
+    border-radius: 0.3em;
+  }
+
+  :where(pre) {
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: break-word;
+  }
+
+  :where(pre code) {
+    max-block-size: 60vh;
+    overflow: auto;
+  }
+
+  :where(dl) {
+    display: grid;
+    grid-template-columns: auto minmax(75%, 1fr);
+    gap: calc(var(--gutter) / 2);
+    align-items: baseline;
+  }
+
+  :where(dt) {
+    border-block-end: var(--border-width) dotted;
+  }
+
+  :where(dd) {
+    block-size: 100%;
+    margin-inline-start: 0;
+  }
+
+  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    display: block;
+    inline-size: 100%;
+  }
+
+  :where(input[type="radio"], input[type="checkbox"]) {
+    inline-size: 1.5ex;
+    block-size: 1.5ex;
+    vertical-align: baseline;
+  }
+
+  :where(input[type="file"]) {
+    padding-inline: 0;
+    border: 0;
+  }
+
+  ::-webkit-file-upload-button {
+    appearance: button;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  :where(select) {
+    appearance: none;
+    text-indent: 0.01px;
+    text-overflow: "";
+  }
+
+  :where(hr) {
+    block-size: 0;
+    border: 0;
+    border-block-start: var(--border-width) var(--border-style)
+      var(--color-text);
+  }
+
+  :where(img) {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  :where(figure) {
+    overflow-x: auto;
+  }
+
+  :where(figure > img) {
+    display: block;
+  }
+
+  :where(table) {
+    caption-side: bottom;
+    border-spacing: var(--border-width);
+  }
+
+  :where(tr > *:first-child) {
+    white-space: nowrap;
+  }
+
+  :where(summary > *) {
+    display: inline;
+    vertical-align: middle;
+  }
+}
+
+@layer complex-elements {
+  /* Advanced responsive table — causes page horizontal overflow, use with causion or overflow-x:hidden on body.
+  :where(figure:has(table)) {
+    position: relative;
+    inset-inline-start: 50%;
+    inset-inline-end: 50%;
+    inline-size: 100%;
+    inline-size: 100dvi;
+    margin-inline-start: -50dvi;
+    margin-inline-end: -50dvi;
+    padding-inline: var(--page-padding-inline);
+  } */
+
+  /* Validation text */
+  :where(input, textarea, select) ~ * {
+    margin-block-start: 0;
+    font-size: 0.8em;
+  }
+
+  :where(input:required + span) {
+    display: none;
+  }
+
+  :where(input:required:invalid + span) {
+    display: block;
+  }
+
+  /* Skip link */
+  body > a:first-child {
+    position: fixed;
+    top: var(--stack);
+    left: var(--gutter);
+    inline-size: auto;
+    padding: 2px;
+    text-align: center;
+    background-color: var(--color-bg);
+  }
+
+  body > a:first-child:not(:focus) {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@layer add-ons {
+  /* ------------------------------------ *\
+		 - Requires data attributes.
+		 - Remove to do your own layouts.
+	\* ------------------------------------ */
+
+  :where([data-layout], [data-layout] + *) {
+    margin-block-start: var(--stack);
+  }
+
+  :where([data-layout]:first-child) {
+    margin-block-start: 0;
+  }
+
+  :where([data-layout] > *) {
+    margin: 0;
+  }
+
+  :where(body[data-layout="single"]) {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    min-block-size: 100dvb;
+  }
+
+  :where(body[data-layout="single"] > *) {
+    min-inline-size: 0;
+  }
+
+  :where(body[data-layout="single"] main) {
+    padding-block: clamp(var(--stack) * 1, 10vmax, var(--stack) * 2);
+    padding-inline: var(--page-padding-inline);
+  }
+
+  :where(body[data-layout="single"] > header, body[data-layout="single"]
+      > footer) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--gutter);
+    row-gap: calc(var(--stack) / 2);
+
+    > *:only-child {
+      margin-block: 0;
+      margin-inline: auto;
+    }
+  }
+
+  :where(body[data-layout="single"] > footer) {
+    padding-block: clamp(var(--stack) * 1, 10vmax, var(--stack) * 2)
+      clamp(var(--stack) * 2, 10vmax, var(--stack) * 6);
+    padding-inline: var(--page-padding-inline);
+    border-block-start: var(--border-width) var(--border-style);
+  }
+
+  :where(body[data-layout="single"] > header) {
+    padding-block: clamp(var(--stack) * 2, 10vmax, var(--stack) * 6)
+      clamp(var(--stack) * 1, 10vmax, var(--stack) * 2);
+    padding-inline: var(--page-padding-inline);
+    border-block-end: var(--border-width) var(--border-style);
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    h1 a,
+    > h1,
+    > a {
+      display: block;
+      font-size: clamp(2.25rem, 2.125rem + 0.5dvi, 2.75rem);
+      font-weight: var(--font-weight-bold);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    > nav {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: var(--gutter);
+        row-gap: calc(var(--stack) / 2);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  :where([data-layout="grid"]) {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(var(--min-inline-size), 1fr)
+    );
+    gap: var(--gutter);
+  }
+
+  :where([data-layout="flag"]) {
+    display: grid;
+    grid-template-columns: minmax(5ch, max-content) 75%;
+    gap: var(--gutter);
+    align-items: center;
+
+    > *:nth-child(odd) {
+      align-self: start;
+    }
+  }
+}
