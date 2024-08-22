@@ -172,20 +172,22 @@
       <li>11 implementations (varying levels of interoperability)</li>
       <li>Used extensively in VCWG for test suites and canivc.com</li>
       <li>Production deployments (TruAge, CA DMV/OpenCred)</li>
-      <li>Plan: propose for standards track soon</li>
     </ol>
   </section>
 
   <section class="slide">
     <h2>Verifiable Credentials over Wireless NFC (1/2)</h2>
     <h3>Protocols for in-person VC Presentation</h3>
-    <p>Mechanisms:</p>
-    <ol>
-      <li>NFC</li>
-      <li>Bluetooth</li>
-    </ol>
-    <p>Still in exploration/development phase</p>
-    <p>Specification draft soon</p>
+    <ul>
+      <li>Mechanisms:
+        <ol>
+          <li>NFC</li>
+          <li>Bluetooth</li>
+        </ol>
+      </li>
+      <li>Still in exploration/development phase</li>
+      <li>Specification draft soon</li>
+    </ul>
   </section>
 
   <section class="slide">
@@ -199,25 +201,50 @@
     </ol>
   </section>
 
-
    <section class="slide">
     <p class="shout">Applications</p>
    </section>
 
   <section class="slide">
     <h2>Verifiable Credential Barcodes</h2>
+    <h3>Cryptographic security for physical credentials</h3>
+    <p>Barcodes encode VCs into easily consumable format</p>
+    <ul>
+      <li>Uses new <b>ecdsa-xi-2023</b> cryptosuite to digitally sign both the VC and the optically readable data on the card (e.g. MRZ on Employment Authorization Document, PDF417 on Driver's License</li>
+      <li>Multiple implementations in progress, test vectors available in specification</li>
+      <li>Production deployments for California Department of Motor Vehicles, Department of Homeland Security in progress</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <img height=250 class = "fit" style="object-position: 94% 100%" src="./images/vcb_example.png">
   </section>
 
   <section class="slide">
     <h2>Citizenship Vocabulary</h2>
+    <h3>A Linked Data vocabulary for expressing attributes related to citizenship</h3>
+    <ul>
+      <li>Use case: VCs for provable ownership of a vehicle as recognized by an issuing organization (e.g. a state government)</li>
+      <li>Production deployment in progress with USCIS</li>
+    </ul>
   </section>
 
   <section class="slide">
     <h2>Verifiable Driver's License Vocabulary</h2>
+    <h3>A Linked Data vocabulary for expressing attributes related to digital driver's licenses</h3>
+    <ul>
+      <li>Use case: VCs for digital driver's licenses</li>
+      <li>Production deployment in progress with CA DMV</li>
+    </ul>
   </section>
 
   <section class="slide">
     <h2>Verifiable Vehicle Titles Vocabulary</h2>
+    <h3>A Linked Data vocabulary for expressing attributes related to vehicle titling and ownership</h3>
+    <ul>
+      <li>Use case: VCs for provable ownership of a vehicle as recognized by an issuing organization (e.g. a state government)</li>
+      <li>Production deployment in progress with CA DMV</li>
+    </ul>
   </section>
 
   <section class="slide final">
