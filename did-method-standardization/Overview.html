@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+ <head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>DID Method Standardization at W3C</title>
+  <link rel="stylesheet" href="../Templates/slides.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="../Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!--   <script src="../Templates/shower.js"></script>         -->
+  <!--   <script src="../Templates/iframe-fixup.js"></script>   -->
+ </head>
+ <body class="shower fade-in duration=15">
+
+  <!-- Remove this element if you don't want a progress bar: -->
+  <div class=progress></div>
+
+  <!-- Remove this element if you don't want the remaining time in
+       index mode and on the 2nd screen. If you keep it, you may want
+       to add the class "duration=n" on BODY, where n is the initial
+       number of minutes on the clock. Default is 30. -->
+  <div class=clock></div>
+
+  <!-- Alternative: Show also real time and elapsed time. -->
+  <!-- <div class=fullclock></div> -->
+
+  <!-- What a screen reader should say on leaving slide mode,
+       instead of the default ‘Stopped.’ -->
+  <div role=region aria-live=assertive>
+    Leaving slide mode.
+  </div>
+
+  <section class="slide cover clear">
+   <h1>DID Method Standardization at W3C</h1>
+   <address>Kim Hamilton Duffy, Gabe Cohen, Manu Sporny</address>
+   <p>TPAC 2024<br>
+     Anaheim CA, USA<br>
+     hybrid meeting<br>
+     23–27 SEPTEMBER 2024</p>
+  </section>
+
+  <section class="slide">
+    <h2>What is a DID Method?</h2>
+    <h3>Definition</h3>
+    <p>
+<a href="https://www.w3.org/TR/did-core/">Decentralized identifiers</a> (DIDs),
+a W3C Recommendation, are a type of identifier that enables people and
+organizations to own their identifiers.
+    </p>
+    <p>
+A <a href="https://www.w3.org/TR/did-core/#methods">DID Method</a> is a
+specification describing a protocol for creating, reading, updating, and
+deactivating a Decentralized Identifier.
+    </p>
+    <p>
+There are <a href="https://w3c.github.io/did-extensions/methods/#did-methods">
+over 200 registered DID Methods</a> today! Some say that's great, some say
+that's terrible!
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Who uses DIDs?</h2>
+    <h3>Production Deployments</h3>
+    <ul>
+      <li>
+BlueSky (a decentralized social network) provides DIDs for 9 million people (in
+production).
+      </li>
+      <li>
+The California DMV provides DIDs for all their Verifiable Credential
+Driver's License holders (over 600K people, in production today -- over 34
+million people at scale).
+      </li>
+      <li>
+US Citizenship and Immigration Services (DHS USCIS) has committed to using DIDs
+for DHS agencies and the 43 million people that hold identity documents issued
+by them.
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Why Standardize DID Methods?</h2>
+    <h3>Challenges</h3>
+    <ul>
+      <li>Governments are looking for more definitive guidance</li>
+      <li>W3C Members are looking for demonstrations of interop</li>
+      <li>Did we mention there are over 200 DID Methods? :)</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Demonstration of Momentum</h2>
+    <h3>Momentum</h3>
+    <p>
+Recently, the W3C Credentials Community Group, the Decentralized Identity
+Foundation, the Trust Over IP Foundation, and the IOTA Foundation announced a
+joint initiative to standardize DID Methods. These groups are actively
+incubating DID Methods to be standardized.
+    </p>
+  </section>
+
+
+  <section class="slide">
+    <h2>Pre-standardization Areas of Focus</h2>
+    <ul>
+      <li>W3C-bound DID Methods</li>
+      <li>Common DID Features (DNS as a 2nd factor, audit logs)</li>
+      <li>Cross-standards organization collaboration</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>W3C DID Methods Working Group?</h2>
+    <h3>A W3C Charter Proposal</h3>
+    <p>
+Gathering feedback on a
+<a href="https://msporny.github.io/w3c-dmwg/">W3C DID Methods Working Group
+Charter</a>.
+    </p>
+    <ul>
+      <li>An ephemeral method?</li>
+      <li>A web-based method?</li>
+      <li>A decentralized method?</li>
+    </ul>
+  </section>
+
+  <section class="slide final">
+    <h2>Discussion</h2>
+    <ul>
+      <li>Would there be support for a W3C DID Methods Working Group?</li>
+      <li>Would there be objections, if so, what are they?</li>
+      <li>Any other thoughts, concerns, or questions?</li>
+    </ul>
+  </section>
+
+  <footer class="long comment">
+   <address>Template created 11 December 2023 by <a
+   href="mailto:bert@w3.org">Bert Bos</a>.
+   This file last modified
+   $Date: 2024/04/09 15:58:20 $ by $Author: bbos $.</address>
+  </footer>
+ </body>
+</html>
+<!-- Local Variables: -->
+<!-- sgml-basic-offset: 1 -->
+<!-- End: -->
