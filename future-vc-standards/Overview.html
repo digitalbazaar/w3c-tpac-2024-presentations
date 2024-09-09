@@ -147,14 +147,41 @@
   </section>
 
   <section class="slide">
+    <h2>renderMethod</h2>
+    <code>"renderMethod": [{
+      "id": "https://example.edu/credentials/BachelorDegree.svg",
+      "type": "SvgRenderingTemplate",
+      "name": "Portrait Mode",
+      "css3MediaQuery": "@media (orientation: portrait)",
+      "digestMultibase": "zQmAPdhyxzznFCwYxAp2dRerWC85Wg6wFl9G270iEu5h6JqW"
+    }]</code>
+  </section>
+
+  <section class="slide">
     <h2>confidenceMethod</h2>
     <h3>Increase credential accuracy and trustworthiness</h3>
     <ol>
      <li>Currently a Reserved Extension Point</li>
-
+      <li>Defines how verifiers can assess the reliability of claims in a credential, impacting liability and trust, with flexibility to accept or enhance verification methods.</li>
     </ol>
   </section>
 
+  <section class="slide">
+    <h2>confidenceMethod</h2>
+    <code>"confidenceMethod": [{
+    "type": "VerificationKeyConfirmation",
+    "publicKeyJwk": {
+      "crv": "Ed25519",
+      "x": "VCpo2LMLhn6iWku8MKvSLg2ZAoC-nlOyPVQaO3FxVeQ",
+      "kty": "OKP",
+      "kid": "_Qq0UL2Fq651Q0Fjd6TvnYE-faHiOpRlPVQcY_-tA4A"
+    }
+  },{
+    "type": "VerificationKeyConfirmation",
+    "publicKeyMultibase": "zH3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
+  }],
+</code>
+</section>
   <section class="slide">
     <h2>Unlinkable ECDSA Cryptosuite</h2>
   </section>
