@@ -176,7 +176,202 @@
    </div>
   </section>
 
-  <section class="slide" id="cbor-ld-utopia-vc"></section>
+  <section class="slide" id="cbor-ld-utopia-vc">
+    <h2>Utopia Driver's License</h2>
+    <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-a-json-ld-vc-for-a-utopia-driver-s-license-vcb">
+      https://w3c-ccg.github.io/vc-barcodes/#example-a-json-ld-vc-for-a-utopia-driver-s-license-vcb
+    </a>
+    <pre style="font-size: 10%;">{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://w3id.org/vc-barcodes/v1",
+    "https://w3id.org/utopia/v2"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "OpticalBarcodeCredential"
+  ],
+  "credentialSubject": {
+    "type": "AamvaDriversLicenseScannableInformation",
+    "protectedComponentIndex": "uggAg"
+  },
+  "issuer": "did:key:zDnaeWjKfs1ob9QcgasjYSPEMkwq31hmvSAWPVAgnrt1e9GKj",
+  "credentialStatus": {
+    "type": "TerseBitstringStatusListEntry",
+    "terseStatusListBaseUrl": "https://sandbox.platform.veres.dev/statuses/z19rJ4oGrbFCqf3cNTVDHSbNd/status-lists",
+    "terseStatusListIndex": 3851559041
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "verificationMethod": "did:key:zDnaeWjKfs1ob9QcgasjYSPEMkwq31hmvSAWPVAgnrt1e9GKj#zDnaeWjKfs1ob9QcgasjYSPEMkwq31hmvSAWPVAgnrt1e9GKj",
+    "cryptosuite": "ecdsa-xi-2023",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z4g6G3dAZhhtPxPWgFvkiRv7krtCaeJxjokvL46fchAFCXEY3FeX2vn46MDgBaw779g1E1jswZJxxreZDCrtHg2qH"
+  }
+}</pre>
+  </section>
+
+  <section class="slide" id="cbor-ld-">
+    <h2>CBOR-LD encoding parameters</h2>
+    <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-cbor-ld-encoding-parameters">
+      https://w3c-ccg.github.io/vc-barcodes/#example-cbor-ld-encoding-parameters
+    </a>
+    <pre style="font-size: 10%;">registryEntryId: 100
+typeTable:
+{
+  "context":
+    {
+      "https://www.w3.org/ns/credentials/v2": 32768,
+      "https://w3id.org/vc-barcodes/v1": 32769,
+      "https://w3id.org/utopia/v2": 32770
+    },
+
+  "https://w3id.org/security#cryptosuiteString":
+    {
+      "ecdsa-rdfc-2019": 1,
+      "ecdsa-sd-2023": 2,
+      "eddsa-rdfc-2022": 3,
+      "ecdsa-xi-2023": 4
+    }
+}</pre>
+  </section>
+
+  <section class="slide" id="cbor-ld-">
+    <h2>The term to ID map created by CBOR-LD when compressing a Utopia DL.</h2>
+    <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-the-term-to-id-map-created-by-cbor-ld-when-compressing-a-utopia-dl">
+      https://w3c-ccg.github.io/vc-barcodes/#example-the-term-to-id-map-created-by-cbor-ld-when-compressing-a-utopia-dl
+    </a>
+    <pre style="font-size: 10%;">Map(97) {
+  '@context' => 0,
+  '@type' => 2,
+  '@id' => 4,
+  '@value' => 6,
+  '@direction' => 8,
+  '@graph' => 10,
+  '@included' => 12,
+  '@index' => 14,
+  '@json' => 16,
+  '@language' => 18,
+  '@list' => 20,
+  '@nest' => 22,
+  '@reverse' => 24,
+  '@base' => 26,
+  '@container' => 28,
+  '@default' => 30,
+  '@embed' => 32,
+  '@explicit' => 34,
+  '@none' => 36,
+  '@omitDefault' => 38,
+  '@prefix' => 40,
+  '@preserve' => 42,
+  '@protected' => 44,
+  '@requireAll' => 46,
+  '@set' => 48,
+  '@version' => 50,
+  '@vocab' => 52,
+  '...' => 100,
+  'BitstringStatusList' => 102,
+  'BitstringStatusListCredential' => 104,
+  'BitstringStatusListEntry' => 106,
+  'DataIntegrityProof' => 108,
+  'EnvelopedVerifiableCredential' => 110,
+  'EnvelopedVerifiablePresentation' => 112,
+  'JsonSchema' => 114,
+  'JsonSchemaCredential' => 116,
+  'VerifiableCredential' => 118,
+  'VerifiablePresentation' => 120,
+  '_sd' => 122,
+  '_sd_alg' => 124,
+  'aud' => 126,
+  'cnf' => 128,
+  'description' => 130,
+  'digestMultibase' => 132,
+  'digestSRI' => 134,
+  'exp' => 136,
+  'iat' => 138,
+  'id' => 140,
+  'iss' => 142,
+  'jku' => 144,
+  'kid' => 146,
+  'mediaType' => 148,
+  'name' => 150,
+  'nbf' => 152,
+  'sub' => 154,
+  'type' => 156,
+  'x5u' => 158,
+  'AamvaDriversLicenseScannableInformation' => 160,
+  'MachineReadableZone' => 162,
+  'OpticalBarcodeCredential' => 164,
+  'TerseBitstringStatusListEntry' => 166,
+  'protectedComponentIndex' => 168,
+  'did:key:zDnaeWjKfs1ob9QcgasjYSPEMkwq31hmvSAWPVAgnrt1e9GKj' => 170,
+  'did:key:zDnaeWjKfs1ob9QcgasjYSPEMkwq31hmvSAWPVAgnrt1e9GKj#zDnaeWjKfs1ob9QcgasjYSPEMkwq31hmvSAWPVAgnrt1e9GKj' => 172,
+  'did:key:zDnaeZSD9XcuULaS8qmgDUa6TMg2QjF9xABnZK42awDH3BEzj' => 174,
+  'did:key:zDnaeZSD9XcuULaS8qmgDUa6TMg2QjF9xABnZK42awDH3BEzj#zDnaeZSD9XcuULaS8qmgDUa6TMg2QjF9xABnZK42awDH3BEzj' => 176,
+  'https://sandbox.platform.veres.dev/statuses/z19rJ4oGrbFCqf3cNTVDHSbNd/status-lists' => 178,
+  'confidenceMethod' => 180,
+  'credentialSchema' => 182,
+  'credentialStatus' => 184,
+  'credentialSubject' => 186,
+  'evidence' => 188,
+  'issuer' => 190,
+  'proof' => 192,
+  'refreshService' => 194,
+  'relatedResource' => 196,
+  'renderMethod' => 198,
+  'termsOfUse' => 200,
+  'validFrom' => 202,
+  'validUntil' => 204,
+  'terseStatusListBaseUrl' => 206,
+  'terseStatusListIndex' => 208,
+  'challenge' => 210,
+  'created' => 212,
+  'cryptosuite' => 214,
+  'domain' => 216,
+  'expires' => 218,
+  'nonce' => 220,
+  'previousProof' => 222,
+  'proofPurpose' => 224,
+  'proofValue' => 226,
+  'verificationMethod' => 228,
+  'assertionMethod' => 230,
+  'authentication' => 232,
+  'capabilityDelegation' => 234,
+  'capabilityInvocation' => 236,
+  'keyAgreement' => 238
+}</pre>
+  </section>
+
+  <section class="slide" id="cbor-ld-">
+    <h2>A CBOR-LD compressed Utopia Driver's License VC</h2>
+    <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-a-cbor-ld-compressed-utopia-driver-s-license-vc">
+      https://w3c-ccg.github.io/vc-barcodes/#example-a-cbor-ld-compressed-utopia-driver-s-license-vc
+    </a>
+    <pre style="font-size: 10%;">d90664a60183198000198001198002189d82187618a418b8a3189c18a618ce18b218d01ae592208118baa2189c18a018a8447582002018be18aa18c0a5189c186c18d60418e018e618e258417ab7c2e56b49e2cce62184ce26818e15a8b173164401b5d3bb93ffd6d2b5eb8f6ac0971502ae3dd49d17ec66528164034c912685b8111bc04cdc9ec13dbadd91cc18e418ac
+
+diagnostic:
+1636(
+  {
+    1: [32768, 32769, 32770],
+    157: [118, 164],
+    184: {156: 166, 206: 178, 208: 3851559041},
+    186: {156: 160, 168: h'75820020'},
+    190: 170,
+    192: {
+      156: 108,
+      214: 4,
+      224: 230,
+      226: h'7AB7C2E56B49E2CCE62184CE26818E15A8B173164401B5D3BB93FFD6D2B5EB8F6AC0971502AE3DD49D17EC66528164034C912685B8111BC04CDC9EC13DBADD91CC',
+      228: 172
+    }
+  }
+)</pre>
+  </section>
+
+  <section class="slide" id="cbor-ld-">
+    <h2>A Verifiable Ccredential Barcode (a PDF417) of the Utopia driver's license.</h2>
+    <img src="dl-barcode.png" alt="A PDF417 barcode representation of the CBOR-LD encoded Utopia Driver's License.">
+  </section>
 
   <section class="slide" id="cbor-ld-road-ahead">
    <h2>CBOR-LD - Road Ahead</h2>
