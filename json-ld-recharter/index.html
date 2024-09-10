@@ -6,6 +6,19 @@
   <meta content="width=device-width" name="viewport">
   <title>CBOR-LD, YAML-LD & the JSON-LD Recharter</title>
   <link rel="stylesheet" href="../Templates/slides.css">
+  <link rel="stylesheet" href="highlight-js/styles/atom-one-dark.css">
+  <script src="highlight-js/highlight.min.js"></script>
+  <script src="highlight-js/languages/json.min.js"></script>
+  <style>
+    /* shut off template <pre> styling */
+    .slide pre {
+      color: inherit;
+      background: none;
+    }
+    .slide pre > code {
+      background: #282c34;
+    }
+  </style>
   <!-- To use the b6+ framework, include this: -->
   <script src="../Templates/b6plus.js"></script>
   <!-- To use the Shower framework, remove b6plus above and add these two: -->
@@ -117,7 +130,7 @@
    <div class="columns">
     <section>
       <h3>JSON-LD</h3>
-      <pre style="font-size: 10%">{
+      <pre style="font-size: 10%"><code>{
   "@context": [
     "https://www.w3.org/ns/credentials/v2",
     "https://w3id.org/vc-barcodes/v1",
@@ -140,16 +153,16 @@
   },
   "proof": {
     "type": "DataIntegrityProof",
-    "verificationMethod": "did:key:...
+    "verificationMethod": "did:key:...",
     "cryptosuite": "ecdsa-xi-2023",
     "proofPurpose": "assertionMethod",
     "proofValue": "z4…"
   }
-}</pre>
+}</code></pre>
     </section>
     <section>
       <h3>CBOR-LD</h3>
-      <pre style="font-size: 10%">1636(
+      <pre style="font-size: 10%"><code>1636(
   {
     1: [32768, 32769, 32770],
     157: [118, 164],
@@ -171,7 +184,7 @@
       228: 172
     }
   }
-}</pre>
+)</code></pre>
     </section>
    </div>
   </section>
@@ -181,7 +194,7 @@
     <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-a-json-ld-vc-for-a-utopia-driver-s-license-vcb">
       https://w3c-ccg.github.io/vc-barcodes/#example-a-json-ld-vc-for-a-utopia-driver-s-license-vcb
     </a>
-    <pre style="font-size: 10%;">{
+    <pre style="font-size: 10%;"><code>{
   "@context": [
     "https://www.w3.org/ns/credentials/v2",
     "https://w3id.org/vc-barcodes/v1",
@@ -208,7 +221,7 @@
     "proofPurpose": "assertionMethod",
     "proofValue": "z4g6G3dAZhhtPxPWgFvkiRv7krtCaeJxjokvL46fchAFCXEY3FeX2vn46MDgBaw779g1E1jswZJxxreZDCrtHg2qH"
   }
-}</pre>
+}</code></pre>
   </section>
 
   <section class="slide" id="cbor-ld-">
@@ -216,7 +229,7 @@
     <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-cbor-ld-encoding-parameters">
       https://w3c-ccg.github.io/vc-barcodes/#example-cbor-ld-encoding-parameters
     </a>
-    <pre style="font-size: 10%;">registryEntryId: 100
+    <pre style="font-size: 10%;"><code>registryEntryId: 100
 typeTable:
 {
   "context":
@@ -233,7 +246,7 @@ typeTable:
       "eddsa-rdfc-2022": 3,
       "ecdsa-xi-2023": 4
     }
-}</pre>
+}</code></pre>
   </section>
 
   <section class="slide" id="cbor-ld-">
@@ -241,7 +254,7 @@ typeTable:
     <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-the-term-to-id-map-created-by-cbor-ld-when-compressing-a-utopia-dl">
       https://w3c-ccg.github.io/vc-barcodes/#example-the-term-to-id-map-created-by-cbor-ld-when-compressing-a-utopia-dl
     </a>
-    <pre style="font-size: 10%;">Map(97) {
+    <pre style="font-size: 10%;"><code>Map(97) {
   '@context' => 0,
   '@type' => 2,
   '@id' => 4,
@@ -339,7 +352,7 @@ typeTable:
   'capabilityDelegation' => 234,
   'capabilityInvocation' => 236,
   'keyAgreement' => 238
-}</pre>
+}</code></pre>
   </section>
 
   <section class="slide" id="cbor-ld-">
@@ -347,7 +360,7 @@ typeTable:
     <a style="font-size: xx-small;" href="https://w3c-ccg.github.io/vc-barcodes/#example-a-cbor-ld-compressed-utopia-driver-s-license-vc">
       https://w3c-ccg.github.io/vc-barcodes/#example-a-cbor-ld-compressed-utopia-driver-s-license-vc
     </a>
-    <pre style="font-size: 10%;">d90664a60183198000198001198002189d82187618a418b8a3189c18a618ce18b218d01ae592208118baa2189c18a018a8447582002018be18aa18c0a5189c186c18d60418e018e618e258417ab7c2e56b49e2cce62184ce26818e15a8b173164401b5d3bb93ffd6d2b5eb8f6ac0971502ae3dd49d17ec66528164034c912685b8111bc04cdc9ec13dbadd91cc18e418ac
+    <pre style="font-size: 10%;"><code>d90664a60183198000198001198002189d82187618a418b8a3189c18a618ce18b218d01ae592208118baa2189c18a018a8447582002018be18aa18c0a5189c186c18d60418e018e618e258417ab7c2e56b49e2cce62184ce26818e15a8b173164401b5d3bb93ffd6d2b5eb8f6ac0971502ae3dd49d17ec66528164034c912685b8111bc04cdc9ec13dbadd91cc18e418ac
 
 diagnostic:
 1636(
@@ -365,7 +378,7 @@ diagnostic:
       228: 172
     }
   }
-)</pre>
+)</code></pre>
   </section>
 
   <section class="slide" id="cbor-ld-">
@@ -430,6 +443,7 @@ diagnostic:
    This file last modified
    $Date: 2024/07/31 23:21:04 $ by $Author: bbos $.</address>
   </footer>
+  <script>hljs.highlightAll();</script>
  </body>
 </html>
 <!-- Local Variables: -->
