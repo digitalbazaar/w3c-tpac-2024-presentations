@@ -138,16 +138,92 @@
     <!-- TODO: Wes to fill in -->
    <h2>CBOR-LD</h2>
    <p>Enables small data use cases: QR codes, Web of Things, etc.</p>
-   <h3>How?</h3>
+   <p>Multiple approaches:</p>
    <ul>
-    <li>Mapping terms to numbers</li>
-    <li>...</li>
+    <li><a href="https://json-ld.github.io/cbor-ld-spec/">CBOR-LD 1.0</a>
+      - primary input from JSON-LD CG report</li>
+    <li><a href="https://w3c.github.io/json-ld-cbor/">JSON-LD in CBOR</a>
+      - alternate approach previously explored</li>
+    <li><a href="https://arxiv.org/abs/2407.04398">CBL: Compact Encoding of JSON-LD Data using CBOR and Bitmaps for Web of Things</a>
+      - community paper exploring alternative approaches</li>
    </ul>
   </section>
 
   <section class=comment>
    <p>Notes.</p>
   </section>
+
+  <section class="slide">
+   <h2>CBOR-LD - How?</h2>
+   <ul>
+    <li>Mapping terms to numbers</li>
+    <li>...</li>
+   </ul>
+  </section>
+  <section class="comment"></section>
+
+  <section class="slide">
+   <h2>CBOR-LD - Example</h2>
+   <div class="columns">
+    <section>
+      <pre style="font-size: 10%">{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://w3id.org/vc-barcodes/v1",
+    "https://w3id.org/utopia/v2"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "OpticalBarcodeCredential"
+  ],
+  "credentialSubject": {
+    "type": "AamvaDriversLicenseScannableInformation",
+    "protectedComponentIndex": "uggAg"
+  },
+  "issuer": "did:key:...",
+  "credentialStatus": {
+    "type": "TerseBitstringStatusListEntry",
+    "terseStatusListBaseUrl":
+      "https://example.com/statuses/abc/status-lists",
+    "terseStatusListIndex": 3851559041
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "verificationMethod": "did:key:...
+    "cryptosuite": "ecdsa-xi-2023",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z4…"
+  }
+      }</pre>
+    </section>
+    <section>
+      <pre style="font-size: 10%">1636(
+  {
+    1: [32768, 32769, 32770],
+    157: [118, 164],
+    184: {
+      156: 166,
+      206: 178,
+      208: 3851559041
+    },
+    186: {
+      156: 160,
+      168: h'...'
+    },
+    190: 170,
+    192: {
+      156: 108,
+      214: 4,
+      224: 230,
+      226: h'...',
+      228: 172
+    }
+  }
+}</pre>
+    </section>
+   </div>
+  </section>
+  <section class="comment"></section>
 
   <section class="slide">
    <h2>CBOR-LD - Road Ahead</h2>
