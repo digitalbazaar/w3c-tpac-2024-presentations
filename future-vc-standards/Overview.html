@@ -120,14 +120,17 @@
 
   <section class="slide">
 
-    <h2>renderMethod</h2>
-    <code>"renderMethod": [{
-      "id": "https://example.edu/credentials/BachelorDegree.svg",
-      "type": "SvgRenderingTemplate",
-      "name": "Portrait Mode",
-      "css3MediaQuery": "@media (orientation: portrait)",
-      "digestMultibase": "zQmAPdhyxzznFCwYxAp2dRerWC85Wg6wFl9G270iEu5h6JqW"
-    }]</code>
+    <h2>renderMethod example</h2>
+    <pre>
+"renderMethod": [{
+  "id": 
+    "https://example.edu/credentials/BachelorDegree.svg",
+  "type": "SvgRenderingTemplate",
+  "name": "Portrait Mode",
+  "css3MediaQuery": "@media (orientation: portrait)",
+  "digestMultibase": 
+    "zQmAPdhyxzznFCwYxAp2dRerWC85Wg6wFl9G270iEu5h6JqW"
+}]</pre>
   </section>
 
   <section class="slide">
@@ -141,19 +144,19 @@
 
   <section class="slide">
     <h2>confidenceMethod</h2>
-    <code>"confidenceMethod": [{
-    "type": "VerificationKeyConfirmation",
-    "publicKeyJwk": {
-      "crv": "Ed25519",
-      "x": "VCpo2LMLhn6iWku8MKvSLg2ZAoC-nlOyPVQaO3FxVeQ",
-      "kty": "OKP",
-      "kid": "_Qq0UL2Fq651Q0Fjd6TvnYE-faHiOpRlPVQcY_-tA4A"
-    }
-  },{
-    "type": "VerificationKeyConfirmation",
-    "publicKeyMultibase": "zH3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
-  }],
-</code>
+    <pre>
+"confidenceMethod": [{
+  "type": "VerificationKeyConfirmation",
+  "publicKeyJwk": {
+    "crv": "Ed25519",
+    "x": "VCpo2LMLhn6iWku8MKvSLg2ZAoC-nlOyPVQaO3FxVeQ",
+    "kty": "OKP",
+    "kid": "_Qq0UL2Fq651Q0Fjd6TvnYE-faHiOpRlPVQcY_-tA4A"
+  }},{
+  "type": "VerificationKeyConfirmation",
+  "publicKeyMultibase": "zH3..."
+}]
+</pre>
 </section>
   <section class="slide">
     <h2>Unlinkable ECDSA Cryptosuite</h2>
