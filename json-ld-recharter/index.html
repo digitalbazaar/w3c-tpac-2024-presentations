@@ -105,24 +105,45 @@
   <section class="slide" id="cbor-ld">
     <!-- TODO: Wes to fill in -->
    <h2>CBOR-LD</h2>
+   <p><strong>C</strong>oncise <strong>B</strong>inary <strong>O</strong>bject
+    <strong>R</strong>epresentation for <strong>L</strong>inked
+    <strong>D</strong>ata</p>
    <p>Enables small data use cases: QR codes, Web of Things, etc.</p>
-   <p>Multiple approaches:</p>
    <ul>
-    <li><a href="https://json-ld.github.io/cbor-ld-spec/">CBOR-LD 1.0</a>
-      - primary input from JSON-LD CG report</li>
-    <li><a href="https://w3c.github.io/json-ld-cbor/">JSON-LD in CBOR</a>
-      - alternate approach previously explored</li>
-    <li><a href="https://arxiv.org/abs/2407.04398">CBL: Compact Encoding of JSON-LD Data using CBOR and Bitmaps for Web of Things</a>
-      - community paper exploring alternative approaches</li>
+    <li>Compression ratios up to 40% better than gzip/zlib.</li>
+    <li>Works on any compacted JSON-LD Document.</li>
+    <li>Data Integrity signatures do not need to change.</li>
+    <li>Extensible registry-based codec model.</li>
+    <li>Application-specific codecs.</li>
+    <li>"Practical" set of design trade-offs.</li>
    </ul>
   </section>
 
   <section class="slide" id="cbor-ld-how">
    <h2>CBOR-LD - How?</h2>
    <ul>
-    <li>Mapping terms to numbers</li>
-    <li>...</li>
+    <li>Reduce data duplication</li>
+    <li>Build compression dictionary using <code>@context</code> (maps terms to numbers)
+      <ul>
+        <li>Globally linkable, industry-standard dictionary</li>
+        <li>No need to include the dictionary in the data</li>
+      </ul>
+    </li>
    </ul>
+  </section>
+
+  <section class="slide" id="cbor-compression-table">
+   <h2>CBOR-LD Compression Table</h2>
+   <table>
+    <tr><td colspan="2" style="text-align: center;">CBOR-LD Compression Dictionary for
+    https://www.w3.org/2018/credentials/v1
+    </td></tr>
+    <tr><td><code>@context</code></td><td>1</td></tr>
+    <tr><td><code>issuanceData</code></td><td>102</td></tr>
+    <tr><td><code>issuer</code></td><td>103</td></tr>
+    <tr><td><code>VerifiableCredential</code></td><td>104</td></tr>
+    <tr><td colspan="2">...etc...</td></tr>
+   </table>
   </section>
 
   <section class="slide" id="cbor-ld-initial-example">
@@ -391,8 +412,17 @@ diagnostic:
    <ul>
     <li>Added to charter</li>
     <li>CBOR-LD 1.0 Working Draft</li>
-    <li>incorporate other work</li>
-    <li>gather WG feedback/contribution/changes</li>
+    <li>Incorporate other work
+      <ul>
+        <li><a href="https://json-ld.github.io/cbor-ld-spec/">CBOR-LD 1.0</a>
+          - primary input from JSON-LD CG report</li>
+        <li><a href="https://w3c.github.io/json-ld-cbor/">JSON-LD in CBOR</a>
+          - alternate approach previously explored</li>
+        <li><a href="https://arxiv.org/abs/2407.04398">CBL: Compact Encoding of JSON-LD Data using CBOR and Bitmaps for Web of Things</a>
+          - community paper exploring alternative approaches</li>
+      </ul>
+    </li>
+    <li>Gather WG feedback/contribution/changes</li>
    </ul>
   </section>
 
