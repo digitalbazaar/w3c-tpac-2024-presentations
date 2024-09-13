@@ -123,12 +123,12 @@
     <h2>renderMethod example</h2>
     <pre>
 "renderMethod": [{
-  "id": 
+  "id":
     "https://example.edu/credentials/BachelorDegree.svg",
   "type": "SvgRenderingTemplate",
   "name": "Portrait Mode",
   "css3MediaQuery": "@media (orientation: portrait)",
-  "digestMultibase": 
+  "digestMultibase":
     "zQmAPdhyxzznFCwYxAp2dRerWC85Wg6wFl9G270iEu5h6JqW"
 }]</pre>
   </section>
@@ -138,10 +138,11 @@
     src="./images/phone_check.png">
     <h2>confidenceMethod</h2>
     <h3>Increase credential accuracy and trustworthiness</h3>
-    <ol>
-     <li>Currently a Reserved Extension Point</li>
-      <li>Defines how verifiers can assess the reliability of claims in a credential, impacting liability and trust, with flexibility to accept or enhance verification methods.</li>
-    </ol>
+    <ul>
+      <li>Gives confidence the entity presenting the credential is the one that picked it up</li>
+      <li>Can be bound to a hardware key</li>
+      <li>Can use other unlinkable and non-correlatable methods</li>
+    </ul>
   </section>
 
   <section class="slide">
@@ -150,14 +151,11 @@
 "confidenceMethod": [{
   "type": "VerificationKeyConfirmation",
   "publicKeyJwk": {
-    "crv": "Ed25519",
-    "x": "VCpo2LMLhn6iWku8MKvSLg2ZAoC-nlOyPVQaO3FxVeQ",
-    "kty": "OKP",
-    "kid": "_Qq0UL2Fq651Q0Fjd6TvnYE-faHiOpRlPVQcY_-tA4A"
-  }},{
-  "type": "VerificationKeyConfirmation",
-  "publicKeyMultibase": "zH3..."
-}]
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "f83OJ3D2xFzv3SKnli_J9i7Fy1oD2m5wdJGJVAOzvZ0",
+    "y": "x_FEzRu9-4sM8c4JLAuO4ZF2_CfAhFb6tkcU8QpF9Ck"
+  }}]
 </pre>
 </section>
   <section class="slide">
@@ -233,13 +231,12 @@
     src="./images/phone_nfc.jpg">
     <ul>
       <li>Mechanisms:
-        <ol>
+        <ul>
           <li>NFC</li>
           <li>Bluetooth</li>
-        </ol>
+        </ul>
       </li>
-      <li>Still in exploration/development phase</li>
-      <li>Specification draft soon</li>
+      <li>Specification draft</li>
     </ul>
   </section>
 
@@ -249,11 +246,11 @@
     <h2>Verifiable Credentials over Wireless NFC (2/2)</h2>
     <h3>Protocols for in-person VC Presentation</h3>
     <p>Applications:</p>
-    <ol>
+    <ul>
       <li>First responder on-site presentation</li>
       <li>Border crossing</li>
       <li>Retail or venue interactions</li>
-    </ol>
+    </ul>
   </section>
 
    <section class="slide">
